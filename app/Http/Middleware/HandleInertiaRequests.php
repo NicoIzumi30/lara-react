@@ -3,11 +3,11 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Inertia\Middleware;
+use Inertia\Middleware; 
 
 class HandleInertiaRequests extends Middleware
 {
-    /**
+    /** 
      * The root template that is loaded on the first page visit.
      *
      * @var string
@@ -34,6 +34,9 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'flash' => [
+                'message' => fn () => $request->session()->get('message'),
+            ]
         ];
     }
 }

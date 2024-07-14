@@ -24,10 +24,10 @@ export default function Login({ status, canResetPassword }) {
         e.preventDefault();
 
         post(route('login'));
-    };
+    };  
 
     return (
-        <GuestLayout>
+        <GuestLayout>   
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -43,11 +43,11 @@ export default function Login({ status, canResetPassword }) {
                         value={data.email}
                         className="mt-1 block w-full"
                         autoComplete="username"
-                        isFocused={true}
+                        isFocused={true}    
                         onChange={(e) => setData('email', e.target.value)}
                     />
 
-                    <InputError message={errors.email} className="mt-2" />
+                    <InputError message={errors.email} className="mt-2" />  
                 </div>
 
                 <div className="mt-4">
